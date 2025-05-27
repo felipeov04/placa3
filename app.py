@@ -4,6 +4,10 @@ import base64
 from openai import OpenAI
 import paho.mqtt.client as paho
 
+broker="broker.mqttdashboard.com"
+port=1883
+client1= paho.Client("Usta456")
+client1.on_message = on_message
 
 def on_publish(client,userdata,result):             #create function for callback
     print("el dato ha sido publicado \n")
@@ -20,10 +24,7 @@ def on_message(client, userdata, message):
         
 
 
-broker="broker.mqttdashboard.com"
-port=1883
-client1= paho.Client("Usta456")
-client1.on_message = on_message
+
 
 
 # Function to encode the image to base64
