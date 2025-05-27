@@ -25,6 +25,9 @@ port=1883
 client1= paho.Client("Usta456")
 client1.on_message = on_message
 
+if st.button("send")
+    st.write(full_response)
+
 
 # Function to encode the image to base64
 def encode_image(image_file):
