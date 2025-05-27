@@ -25,9 +25,6 @@ port=1883
 client1= paho.Client("Usta456")
 client1.on_message = on_message
 
-if st.button("send"):
-    st.write(full_response)
-
 
 # Function to encode the image to base64
 def encode_image(image_file):
@@ -113,12 +110,7 @@ if uploaded_file is not None and api_key and analyze_button:
                     message_placeholder.markdown(full_response + "▌")
                     st.write(full_response)
             # Final update to placeholder after the stream ends
-            message_placeholder.markdown(full_response)
-            client1= paho.Client("Usta456")                           
-            client1.on_publish = on_publish                          
-            client1.connect(broker,port)                                 
-            ret= client1.publish("Usta",full_response) 
-            st.write(full_reponse)
+
 
         except Exception as e:
             st.error(f"An error occurred: {e}")
@@ -128,3 +120,12 @@ else:
         st.warning("Please upload an image.")
     if not api_key:
         st.warning("Por favor ingresa tu API key.")
+        
+if st.button("send"):
+    st.write(full_response)
+    message_placeholder.markdown(full_response)
+    client1= paho.Client("Usta456")                           
+    client1.on_publish = on_publish                          
+    client1.connect(broker,port)                                 
+    ret= client1.publish("Usta",full_response) 
+    st.write(full_reponse)
