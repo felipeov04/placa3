@@ -113,7 +113,7 @@ if uploaded_file is not None and api_key and analyze_button:
             client1= paho.Client("Usta456")                           
             client1.on_publish = on_publish                          
             client1.connect(broker,port)                                 
-            ret= client1.publish("Usta"full_response) 
+            ret= client1.publish("Usta",full_response) 
 
         except Exception as e:
             st.error(f"An error occurred: {e}")
