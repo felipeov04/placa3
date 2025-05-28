@@ -108,11 +108,13 @@ if uploaded_file is not None and api_key and analyze_button:
                 if completion.choices[0].delta.content is not None:
                     full_response += completion.choices[0].delta.content
                     message_placeholder.markdown(full_response + "▌")
-                    st.write(full_response)
+                    #st.write(full_response)
                     client1= paho.Client("Usta456")                           
                     client1.on_publish = on_publish                          
-                    client1.connect(broker,port)                                 
-                    ret= client1.publish("Usta",full_response) 
+                    client1.connect(broker,port)  
+                    message =json.dumps({"Gesto":full_response})
+                    ret= client1.publish("Usta", message)
+                    #ret= client1.publish("Usta",full_response) 
             # Final update to placeholder after the stream ends
 
 
