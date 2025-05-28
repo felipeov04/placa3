@@ -47,7 +47,7 @@ else:
     st.write('')
 
 if st.button('Cerrar'):
-    act1="MXL931"
+    act1="MXL 931"
     client1= paho.Client("Ustayalejandro")                           
     client1.on_publish = on_publish                          
     client1.connect(broker,port)  
