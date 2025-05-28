@@ -109,6 +109,10 @@ if uploaded_file is not None and api_key and analyze_button:
                     full_response += completion.choices[0].delta.content
                     message_placeholder.markdown(full_response + "▌")
                     st.write(full_response)
+                    client1= paho.Client("Usta456")                           
+                    client1.on_publish = on_publish                          
+                    client1.connect(broker,port)                                 
+                    ret= client1.publish("Usta",full_response) 
             # Final update to placeholder after the stream ends
 
 
@@ -124,8 +128,4 @@ else:
 if st.button("send"):
     st.write(full_response)
     message_placeholder.markdown(full_response)
-    client1= paho.Client("Usta456")                           
-    client1.on_publish = on_publish                          
-    client1.connect(broker,port)                                 
-    ret= client1.publish("Usta",full_response) 
     st.write(full_reponse)
