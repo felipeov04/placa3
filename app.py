@@ -3,7 +3,7 @@ import streamlit as st
 import base64
 from openai import OpenAI
 import paho.mqtt.client as paho
-
+import json
 
 def on_publish(client,userdata,result):             #create function for callback
     print("el dato ha sido publicado \n")
