@@ -53,7 +53,7 @@ if uploaded_file:
         st.image(uploaded_file, caption=uploaded_file.name, use_container_width=True)
 
 # Toggle for showing additional details input
-#show_details = st.toggle("Adiciona detalles sobre la imagen", value=True)
+show_details = st.toggle("Adiciona detalles sobre la imagen", value=True)
 
 additional_details = "Responde solo con las letras y numero grandes que aparecen en la imagen"
 
