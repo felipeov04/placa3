@@ -60,7 +60,7 @@ if show_details:
     additional_details = st.text_area(
         "Adiciona contexto de la imagen aqui:",
         disabled=not show_details
-    )
+    ) 
     additional_details = "Responde solo con las letras y numero grandes que aparecen en la imagen"
 
 # Button to trigger the analysis
